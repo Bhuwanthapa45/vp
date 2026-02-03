@@ -1,11 +1,11 @@
 # main.py
-from db import create_tables
+from db import create_table
 from input_handler import get_employee_input
 from service import calculate_salary
 from repository import *
 
 def main():
-    create_tables()
+    create_table()
 
     while True:
         print("""
