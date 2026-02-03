@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student - Student Virtuos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input { margin: 5px; padding: 5px; }
+        button { margin-top: 10px; padding: 5px 15px; cursor: pointer; }
+        .back-link { display: inline-block; margin-top: 15px; text-decoration: none; color: #555; }
+    </style>
+</head>
+<body>
+
+<h2>Edit Student Details</h2>
+
+<form method="POST" action="/update/{{ s[0] }}">
+    
+    Name: <input type="text" name="name" value="{{ s[1] }}" maxlength="30" required><br>
+    College: <input type="text" name="college" value="{{ s[2] }}" maxlength="50" required><br>
+    
+    Round 1 (0–10): <input type="number" name="r1" value="{{ s[3] }}" min="0" max="10" step="0.1" required><br>
+    Round 2 (0–10): <input type="number" name="r2" value="{{ s[4] }}" min="0" max="10" step="0.1" required><br>
+    Round 3 (0–10): <input type="number" name="r3" value="{{ s[5] }}" min="0" max="10" step="0.1" required><br>
+    Technical (0–20): <input type="number" name="tech" value="{{ s[6] }}" min="0" max="20" step="0.1" required><br>
+    
+    <button type="submit">Update Student</button>
+</form>
+
+<a href="/" class="back-link">← Cancel and Go Back</a>
+
+</body>
+</html>
