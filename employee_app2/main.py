@@ -41,8 +41,15 @@ def main():
             delete_employee(int(input("Emp ID: ")))
 
         elif choice == "5":
-            for emp in employees_with_min_salary(float(input("Min Salary: "))):
-                print(emp)
+             min_salary = float(input("Min Salary: "))
+             results = employees_with_min_salary(min_salary)
+
+             if not results:
+               print("No employees found with salary >= ", min_salary)
+             else:
+                 for emp in results:
+                  print(emp)
+   
 
         elif choice == "6":
             for row in count_by_category():
